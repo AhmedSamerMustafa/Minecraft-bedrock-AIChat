@@ -3,9 +3,22 @@ const https = require('https');
 const { arabicToMinecraft } = require('./arabic-fix');
 const { readFileSync} = require('fs')
 
+
+const ServerHost = "yourserver.aternoss.me";
+    
+const ServerPort = 19132; 
+    
+const GEMINI_API_KEYS = [ //you can git free api key from https://aistudio.google.com/apikey
+    'AIzaSyC1kNl0QE8_lO0tQ******',
+    'AIzaSyD3pu8Gv_7nB4iN5zmq********',
+    'AIzaSyAhQ6Zzqt45LvMUw9sfNc******'
+];
+
+
+
 function loadJsonFromFileSync(path) {
     try {
-        // Read the JSON file synchronously
+        // Read the JSON file for skin_data
         const jsonData = readFileSync(path, 'utf8');
 
         // Parse the JSON data
@@ -16,16 +29,12 @@ function loadJsonFromFileSync(path) {
     }
 }
 
-const skin_data = loadJsonFromFileSync('bot_skin_data.json')
-let tick = 0n; // for player auth input to make it move
+const skin_data = loadJsonFromFileSync('ai_skin_data.json')
+let tick = 0n; // for player auth input
 
 
 const BOT_USERNAME = '§bAI§f';
-const GEMINI_API_KEYS = [ //api
-    'AIzaSyC1kNl0QE8_lObtQU_VyxLBNGrQfB_bEe0',
-    'AIzaSyD3pu8Gv_7nB4iN5zJqZCgTX8MbjSGf4d8',
-    'AIzaSyAhQ6Zzqt45LvMUw4sfNcSkOJuuq4o_BvU'
-];
+
 function getRandomApiKey() { //random api
     const randomIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
     return GEMINI_API_KEYS[randomIndex];
@@ -44,8 +53,8 @@ function processOnlyArabicParts(text) {
 }
 
 const client = bedrock.createClient({
-    host: "play.cubecraft.net",
-    port: 19132,
+    host: ServerHost,
+    port: ServerPort,
     username: BOT_USERNAME,
     offline: false,
     skinData: skin_data,
