@@ -28,10 +28,6 @@
     ```javascript
     const ServerHost = "your-server.net"; // عنوان السيرفر
     const ServerPort = 19132;             // المنفذ
-    
-    const GEMINI_API_KEYS = [ 
-        'ضع_مفتاح_API_هنا', 
-    ];
     ```
 
 3.  **التشغيل:**
