@@ -20,6 +20,7 @@
 
 ```bash
 npm install bedrock-protocol
+```
 3. إعداد المشروعتأكد من أن ملفات المشروع مرتبة كالتالي:index.js (الكود الرئيسي)arabic-fix.js (مكتبة معالجة النصوص العربية)ai_skin_data.json (ملف بيانات السكن - اختياري)4. الإعداد والتشغيلافتح ملف index.js وقم بتعديل المتغيرات في البداية لتناسب سيرفرك:JavaScriptconst ServerHost = "your-server.net"; // عنوان السيرفر
 const ServerPort = 19132;             // المنفذ (البورت)
 
