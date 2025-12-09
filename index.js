@@ -1,29 +1,22 @@
 const bedrock = require('bedrock-protocol');
 const https = require('https');
 const { arabicToMinecraft } = require('./arabic-fix');
-const { readFileSync} = require('fs')
-
-
-
-
+const { readFileSync } = require('fs')
 
 //=======================================================================
 // plaese change host and port to your server 
-const ServerHost = "ahmedrtx5090.aternos.me";
+const ServerHost = "your-server.net";
     
-const ServerPort = 22591; 
+const ServerPort = 19132; 
     
 
 //you can git free api key from https://aistudio.google.com/apikey
 const GEMINI_API_KEYS = [ 
     'api_key_1', //replace with your api key
    // 'api_key_2',
-    //'api_key_3',
+   // 'api_key_3',
 ];
 //=======================================================================
-
-
-
 
 
 
