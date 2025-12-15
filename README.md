@@ -39,13 +39,9 @@
 
 3.  **تجهيز الذكاء الاصطناعي:**
 
-    اذهب لموقع:
-    [Google ai studio](https://aistudio.google.com/apikey) 
-    انشئ مفتاح (api)
-
+    اذهب لموقع[Google ai studio](https://aistudio.google.com/apikey) ثم انشئ مفتاح (api)
     انسخه و الصقه في ملف
     `.env.example`
-
     قم بتغيير اسم الملف الى
     `.env`
     
