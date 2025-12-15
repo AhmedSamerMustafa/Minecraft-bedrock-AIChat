@@ -4,7 +4,7 @@ const { arabicToMinecraft } = require('./arabic-fix');
 const { readFileSync } = require('fs')
 require('dotenv').config();
 
-//=======================================================================
+//__-__-__-__-__-__-__-__-__-__-__-__-
 // plaese change host and port to your server 
 const ServerHost = "your-server.net";
     
@@ -12,8 +12,8 @@ const ServerPort = 19132;
     
 
 //you can git free api key from https://aistudio.google.com/apikey
-const GEMINI_API_KEYS = process.env.GEMINI_API_KEYS
-//=======================================================================
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY
+//__-__-__-__-__-__-__-__-__-__-__-__-
 
 
 
@@ -32,11 +32,6 @@ function loadJsonFromFileSync(path) {
 
 const skin_data = loadJsonFromFileSync('ai_skin_data.json')
 
-function getRandomApiKey() { //random api
-    const randomIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
-    return GEMINI_API_KEYS[randomIndex];
-}
-
 const conversations = {};
 const MAX_HISTORY_LENGTH = 6; // Maximum number of messages to keep in history
 
@@ -48,20 +43,19 @@ function processOnlyArabicParts(text) {
   if (/^[\u0000-\u007F0-9\s\p{P}]+$/u.test(text)) {return text;}
   return arabicToMinecraft(text, {digits: 'keep'});
 }
-const BOT_USERNAME = '§bAI§f';
+
 const client = bedrock.createClient({
     host: ServerHost,
     port: ServerPort,
     username: BOT_USERNAME,
     offline: true,
-    skinData: skin_data,
+    skinData: '§bAI§f',
 })
 
 
 
 async function getAIResponse(history) {
     return new Promise((resolve) => {
-        const currentApiKey = getRandomApiKey();
         const geminiContents = history.map(turn => ({
             role: turn.role === 'assistant' ? 'model' : 'user',
             parts: [{ text: turn.content }]
@@ -78,7 +72,7 @@ async function getAIResponse(history) {
         const options = {
             hostname: 'generativelanguage.googleapis.com',
             port: 443,
-            path: `/v1beta/models/gemini-2.5-flash:generateContent?key=${currentApiKey}`, // you can change model here. see more https://developers.generativeai.google/products/models
+            path: `/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, // you can change model here. see more https://developers.generativeai.google/products/models
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
         };
@@ -113,10 +107,10 @@ client.on('spawn', () => {
   console.log('Bot connected!');
   setTimeout(() => {
     const welcomeMessage = 'How i can §bhelp you§f?';
-    client.write('text', { //welcome message
+    client.queue('text', { //welcome message
       type: 'chat',
       needs_translation: false,
-      source_name: BOT_USERNAME,
+      source_name: '§bAI§f',
       xuid: '',
       platform_chat_id: '',
       message: welcomeMessage,
@@ -169,7 +163,7 @@ client.on('text', async (packet) => {
     client.write('text', {
       type: 'chat',
       needs_translation: false,
-      source_name: BOT_USERNAME,
+      source_name: '§bAI§f',
       xuid: '',
       platform_chat_id: '',
       message: processedMessage,
