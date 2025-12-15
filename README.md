@@ -1,6 +1,6 @@
 # 🧠 Minecraft Bedrock Chatbot (Gemini Powered)
 <div dir="rtl">
-    <div align="center">
+    
 
   <img src="./chatExample.jpeg" alt="chatExample" width="720"/>
 
