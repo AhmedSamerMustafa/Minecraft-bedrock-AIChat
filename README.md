@@ -1,5 +1,10 @@
 # 🧠 Minecraft Bedrock Chatbot (Gemini Powered)
 <div dir="rtl">
+    <div align="center">
+
+  <img src="./chatExample.jpeg" alt="chatExample" width="600"/>
+
+</div>
 هذا المشروع البسيط هو ربط بين ماين كرافت (Bedrock Edition) مع Google Gemini API للتحدث مع اللاعبين، مع حل لمشكلة ظهور اللغة العربية في اللعبة.
 
 ## 🌟 الميزات
