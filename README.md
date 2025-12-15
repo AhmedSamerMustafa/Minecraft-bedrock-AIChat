@@ -1,4 +1,4 @@
-# 🧠 Minecraft Bedrock Chatbot (Gemini Powered)
+# 🧠 Minecraft Bedrock AIChat
 <div align="right">
   <img src="./chatExample.jpeg" alt="chatExample" width="720"/>
 </div>
