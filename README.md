@@ -41,7 +41,10 @@
 3.  **تجهيز الذكاء الاصطناعي:**
 
     اذهب لموقع [Google ai studio](https://aistudio.google.com/apikey) ثم انشئ مفتاح (api)
-    ثم انسخه و الصقه في ملف
+    ثم انسخه و الصقه في ملف كما يلي:
+    ```bash
+    GEMINI_API_KEY=AIzaSyDxxxxxxxxx
+    ```
     `.env.example`
     ثم قم بتغيير اسم الملف الى
     `.env`
