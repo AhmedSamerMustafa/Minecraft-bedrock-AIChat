@@ -43,7 +43,7 @@
     اذهب لموقع [Google ai studio](https://aistudio.google.com/apikey) ثم انشئ مفتاح (api)
     ثم انسخه و الصقه في ملف`.env.example` كما يلي:
     ```env
-    GEMINI_API_KEY=AIzaSyDxxxxxxxxx
+    GEMINI_API_KEY=AIzaSyD********** // الصقه هنا
     ```
     
     ثم قم بتغيير اسم الملف الى `.env`
