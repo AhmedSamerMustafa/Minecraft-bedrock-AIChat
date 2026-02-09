@@ -182,7 +182,7 @@ client.on('death_info', () => {
 client.on('respawn', (packet) => {
     if (packet.state === 1) { 
         
-        send2chat(`🌍 spawning at: ${packet.position.x}, ${packet.position.y}, ${packet.position.z}`);
+        send2chat(`spawning at: ${packet.position.x}, ${packet.position.y}, ${packet.position.z}`);
         
         client.queue('player_action', {
             runtime_entity_id: client.startGameData.runtime_entity_id,
@@ -192,7 +192,6 @@ client.on('respawn', (packet) => {
             face: -1
         });
         
-        console.log("✅ spawn Complete!");
     }
 });
 
