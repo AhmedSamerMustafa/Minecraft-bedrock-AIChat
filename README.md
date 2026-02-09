@@ -1,8 +1,9 @@
-<div dir="rtl" style="line-height: 1.5 >
+<div dir="rtl" style="line-height: 1.5;">
+  
   <div align="center">
     <h1>🧠 Minecraft Bedrock AIChat</h1>
     فكرة هذا المشروع عبارة عن ربط بين ماين كرافت (Bedrock Edition) مع Gemini AI للتحدث مع اللاعبين، مع حل لمشكلة ظهور اللغة العربية في اللعبة.
-    <div style="margin: 20px 0;">
+    <div align="center" style="margin: 20px 0;">
       <img src="./chatExample.jpeg" alt="chatExample" width="720"/>
     </div>
   </div>
@@ -25,16 +26,18 @@
    npm install bedrock-protocol dotenv
    ```
 2. **الإعداد:** افتح ملف `.env.example` وقم بتعديل البيانات التالية في الأعلى:
+   
    ```env
    serverHost=your-server.net
    serverPort=19132
    ```
-3. **تجهيز الذكاء الاصطناعي:** اذهب لموقع [Google AI Studio](https://aistudio.google.com/apikey) ثم أنشئ مفتاح API والصقه في ملف `.env.example`:
+4. **تجهيز الذكاء الاصطناعي:** اذهب لموقع [Google AI Studio](https://aistudio.google.com/apikey) ثم أنشئ مفتاح API والصقه في ملف `.env.example`:
+   
    ```env
    GEMINI_API_KEY=AIzaXXXXXXXXX
    ```
    ثم قم بتغيير اسم الملف إلى `.env`
-4. **التشغيل:**
+6. **التشغيل:**
    ```bash
    node index.js
    ```
