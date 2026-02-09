@@ -1,4 +1,6 @@
-<center># 🧠 Minecraft Bedrock AIChat</center>
+<div align="center">
+# 🧠 Minecraft Bedrock AIChat
+</div>
 <div dir="rtl">
 هذا المشروع البسيط هو ربط بين ماين كرافت (Bedrock Edition) مع Gemini AI للتحدث مع اللاعبين، مع حل لمشكلة ظهور اللغة العربية في اللعبة.
 
