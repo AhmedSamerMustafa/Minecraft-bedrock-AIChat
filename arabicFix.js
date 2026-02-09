@@ -507,7 +507,7 @@ function reverseForMinecraft(shaped, { brackets = 'auto' } = {}) {
   return res;
 }
 
-function arabicToMinecraft(input, options = {}) {
+function arabicFormulation(input, options = {}) {
   const withDigits = convertDigits(input, options.digits || 'keep');
   const withPunct = normalizePunctuation(withDigits, options.punctuation || 'auto');
   const shaped = shapeArabic(withPunct);
@@ -516,28 +516,10 @@ function arabicToMinecraft(input, options = {}) {
   return visual;
 }
 
-module.exports = {
-  arabicToMinecraft,
+export {
+  arabicFormulation,
   shapeArabic,
   reverseForMinecraft,
   convertDigits
 };
 
-if (require.main === module) {
-  const sample = [
-    'وجدت الماس ارتفاع y= -50',
-    'أفضل مستوى: Y=-58 ~ Y=-64 (تقريبًا)',
-    'التعدين الشريطي (Strip Mining): يسهّل إيجاد خامات بعيدة',
-    'مثال عربي داخل أقواس: (التعدين الشريطي) ممتاز؟ نعم!',
-    'می‌خواهم بروم — فارسی با ZWNJ: می‌خواهم و می‌ روم؟',
-    'سطر أول\nسطر ثاني\n\nسطر ثالث مع فقرة جديدة',
-    'النسبة 50% تتحول إلى ٥٠٪ في وضع الترقيم auto قرب العربي.'
-  ].join('\n\n');
-
-  const out = arabicToMinecraft(sample, {
-    digits: 'keep',
-    brackets: 'auto',
-    punctuation: 'auto'
-  });
-  console.log(out);
-}

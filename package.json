@@ -3,18 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": ["minecraft", "bedrock", "ai", "chatbot", "gemini", "bedrock-protocol"],
   "author": "",
   "license": "ISC",
-<<<<<<< HEAD
-  "description": "",
+  "description": "Minecraft Bedrock Edition AI Chat Bot using Google Gemini can join server.",
   "dependencies": {
-    "bedrock-protocol": "^3.51.0",
+    "bedrock-protocol": "^3.52.0",
+    "@google/genai": "^1.40.0",
     "dotenv": "^17.2.3"
   }
-=======
-  "description": ""
->>>>>>> 46dbc503d97f043e78cf74cdce85d2dab5321afe
 }
