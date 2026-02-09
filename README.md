@@ -6,7 +6,7 @@
 
 
 </div>
-<div align="right">
+<div align="right" style="margin: 20px 0 20px 20px;" >
   <img src="./chatExample.jpeg" alt="chatExample" width="720"/>
 </div>
 
