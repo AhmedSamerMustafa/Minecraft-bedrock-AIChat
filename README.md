@@ -4,6 +4,7 @@
 <div dir="rtl">
 هذا المشروع البسيط هو ربط بين ماين كرافت (Bedrock Edition) مع Gemini AI للتحدث مع اللاعبين، مع حل لمشكلة ظهور اللغة العربية في اللعبة.
 
+
 </div>
 <div align="right">
   <img src="./chatExample.jpeg" alt="chatExample" width="720"/>
