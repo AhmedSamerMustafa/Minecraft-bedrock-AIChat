@@ -25,7 +25,7 @@ function loadJsonFromFileSync(path) {
     }
 }
 
-const skin_data = loadJsonFromFileSync('aiSkinData.json')
+const skin_data = loadJsonFromFileSync('skinData.json')
 
 const client = createClient({
     host: process.env.serverHost,
@@ -34,6 +34,7 @@ const client = createClient({
     version: SERVER_VERSION,
     offline:true,
     skindata: skin_data,
+    skipPing: true
 });
 
 async function send2chat(message)
@@ -159,12 +160,42 @@ client.on("text", async (params) => {
     await send2chat(
         arabicFormulation(aiMessage, {
             digits: 'keep',
-            brackets: 'auto',
+            brackets: 'keep',
             punctuation: 'auto'
         })
     );
 
 })
+
+
+client.on('death_info', () => {
+    send2chat("💀 Bot died! Respawning...");
+    setTimeout(() => {
+    client.queue('respawn', {
+        position: { x: 0, y: 0, z: 0 }, 
+        state: 2, 
+        runtime_entity_id: client.startGameData.runtime_entity_id
+    });
+    },1000)
+});
+
+client.on('respawn', (packet) => {
+    if (packet.state === 1) { 
+        
+        send2chat(`🌍 spawning at: ${packet.position.x}, ${packet.position.y}, ${packet.position.z}`);
+        
+        client.queue('player_action', {
+            runtime_entity_id: client.startGameData.runtime_entity_id,
+            action: 'respawn',
+            position: { x: 0, y: 0, z: 0 },
+            result_position: { x: 0, y: 0, z: 0 },
+            face: -1
+        });
+        
+        console.log("✅ spawn Complete!");
+    }
+});
+
 
 client.once("error", (err) => {
     console.error('Error:\n',err.message);
