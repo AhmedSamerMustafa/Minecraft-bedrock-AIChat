@@ -46,5 +46,5 @@
 
 ## ❤️ شكر وتقدير (Credits)
 هذا المشروع لم يكن ممكناً بدون الأدوات الرائعة التي يوفرها مجتمع المصادر المفتوحة. شكر خاص لـ:
-* مكتبة  [PrismarineJS](https://github.com/PrismarineJS): لتطويرهم مكتبة `bedrock-protocol` التي يعتمد عليها هذا المشروع بالكامل للاتصال بخوادم ماين كرافت.
+* مكتبة  [PrismarineJS](https://github.com/PrismarineJS): لتطويرهم مكتبة [`bedrock-protocol`](https://github.com/PrismarineJS/bedrock-protocol) التي يعتمد عليها هذا المشروع بالكامل للاتصال بخوادم ماين كرافت.
 </div>
