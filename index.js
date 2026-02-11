@@ -136,7 +136,8 @@ async function sendSpawnPacket(){
 }
 
 client.once("start_game", () => {
-    sendSpawnPacket()
+    console.log("AI jpined the server ✅");
+    sendSpawnPacket();
 });
 
 client.on("text", async (params) => {
